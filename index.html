@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelly 日本滑雪一站式服務｜課程・住宿・交通 一次搞定</title>
+<meta name="description" content="想去日本滑雪不知道從哪開始？Kelly 幫你一次安排滑雪課程、教練、住宿、交通接駁。填寫需求單，免費規劃專屬行程。">
+<meta property="og:title" content="Kelly 日本滑雪一站式服務">
+<meta property="og:description" content="滑雪課程、教練、住宿、交通，一次幫你安排好。填寫需求單，免費規劃專屬行程。">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛷️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0e2a43;
+    --navy-2: #163a5c;
+    --ice: #4da3d8;
+    --ice-light: #e8f3fa;
+    --snow: #f7fafc;
+    --white: #ffffff;
+    --ink: #22303e;
+    --muted: #5b6b7b;
+    --accent: #ee6c4d;
+    --accent-dark: #d9532f;
+    --radius: 14px;
+    --shadow: 0 6px 24px rgba(14, 42, 67, 0.10);
+    --maxw: 1080px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--snow);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; display: block; }
+
+  .container {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(14, 42, 67, 0.92);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .brand {
+    color: var(--white);
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand .flake { color: var(--ice); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.92rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-links a:hover { background: rgba(255, 255, 255, 0.12); color: var(--white); }
+
+  .nav-links a.nav-cta {
+    background: var(--accent);
+    color: var(--white);
+    font-weight: 700;
+    margin-left: 8px;
+  }
+
+  .nav-links a.nav-cta:hover { background: var(--accent-dark); }
+
+  @media (max-width: 720px) {
+    .nav-links a:not(.nav-cta) { display: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    background: linear-gradient(180deg, #0e2a43 0%, #1c4a72 55%, #2f6da0 100%);
+    color: var(--white);
+    overflow: hidden;
+    padding: 88px 0 0;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 20px 200px;
+  }
+
+  .hero .eyebrow {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.9rem, 5.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.35;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero h1 .hl { color: #8fd0f5; }
+
+  .hero p.sub {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 32px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 999px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.15s, background 0.2s, box-shadow 0.2s;
+  }
+
+  .btn:active { transform: scale(0.97); }
+
+  .btn-primary {
+    background: var(--accent);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(238, 108, 77, 0.35);
+  }
+
+  .btn-primary:hover { background: var(--accent-dark); }
+
+  .btn-ghost {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .btn-ghost:hover { background: rgba(255, 255, 255, 0.22); }
+
+  .hero-mountains {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero-mountains svg { width: 100%; height: auto; }
+
+  /* ---------- Sections ---------- */
+  section { padding: 72px 0; }
+
+  .section-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 48px;
+  }
+
+  .section-head .tag {
+    display: inline-block;
+    color: var(--ice);
+    background: var(--ice-light);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .section-head p { color: var(--muted); }
+
+  /* ---------- Services ---------- */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+  }
+
+  .card:hover { transform: translateY(-4px); }
+
+  .card .icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: var(--ice-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .card p { font-size: 0.92rem; color: var(--muted); }
+
+  /* ---------- Steps ---------- */
+  .steps-section { background: var(--white); }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 24px;
+    counter-reset: step;
+  }
+
+  .step {
+    position: relative;
+    background: var(--snow);
+    border: 1px solid #e3ecf3;
+    border-radius: var(--radius);
+    padding: 30px 22px 24px;
+    text-align: center;
+  }
+
+  .step .num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 900;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+  }
+
+  .step h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .step p { font-size: 0.9rem; color: var(--muted); }
+
+  /* ---------- Resorts ---------- */
+  .resorts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .resort {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .resort .banner {
+    height: 110px;
+    background: linear-gradient(135deg, var(--navy-2), var(--ice));
+    display: flex;
+    align-items: flex-end;
+    padding: 14px 20px;
+    position: relative;
+  }
+
+  .resort .banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 82% 18%, rgba(255,255,255,0.35) 0 3px, transparent 4px),
+      radial-gradient(circle at 22% 30%, rgba(255,255,255,0.3) 0 2px, transparent 3px),
+      radial-gradient(circle at 60% 45%, rgba(255,255,255,0.28) 0 2px, transparent 3px),
+      radial-gradient(circle at 40% 15%, rgba(255,255,255,0.3) 0 2px, transparent 3px);
+  }
+
+  .resort .banner h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 900;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  }
+
+  .resort .body { padding: 18px 20px 22px; }
+
+  .resort .region {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ice);
+    background: var(--ice-light);
+    padding: 2px 10px;
+    border-radius: 999px;
+    margin-bottom: 8px;
+  }
+
+  .resort p { font-size: 0.9rem; color: var(--muted); }
+
+  /* ---------- FAQ ---------- */
+  .faq-section { background: var(--white); }
+
+  .faq-list { max-width: 760px; margin: 0 auto; }
+
+  details {
+    background: var(--snow);
+    border: 1px solid #e3ecf3;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  summary {
+    cursor: pointer;
+    padding: 18px 22px;
+    font-weight: 700;
+    color: var(--navy);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  summary::-webkit-details-marker { display: none; }
+
+  summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--ice);
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  details[open] summary::after { transform: rotate(45deg); }
+
+  details .answer {
+    padding: 0 22px 18px;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  /* ---------- Form ---------- */
+  .form-section {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+  }
+
+  .form-section .section-head h2,
+  .form-section .section-head p { color: var(--white); }
+
+  .form-section .section-head p { opacity: 0.85; }
+
+  .form-section .section-head .tag {
+    background: rgba(255, 255, 255, 0.15);
+    color: #8fd0f5;
+  }
+
+  form.booking {
+    max-width: 760px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: 18px;
+    padding: 36px 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 560px) {
+    form.booking { padding: 26px 18px; }
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 20px;
+  }
+
+  @media (max-width: 560px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  .field { display: flex; flex-direction: column; gap: 6px; }
+
+  .field.full { grid-column: 1 / -1; }
+
+  .field label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .field label .req { color: var(--accent); }
+
+  .field label .opt {
+    color: var(--muted);
+    font-weight: 400;
+    font-size: 0.8rem;
+  }
+
+  .field input,
+  .field select,
+  .field textarea {
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 11px 14px;
+    border: 1.5px solid #d7e2ec;
+    border-radius: 10px;
+    background: var(--snow);
+    color: var(--ink);
+    width: 100%;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--ice);
+    box-shadow: 0 0 0 3px rgba(77, 163, 216, 0.18);
+    background: var(--white);
+  }
+
+  .field textarea { resize: vertical; min-height: 88px; }
+
+  .choice-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .choice-group label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--snow);
+    border: 1.5px solid #d7e2ec;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    user-select: none;
+  }
+
+  .choice-group input { accent-color: var(--ice); width: 16px; height: 16px; }
+
+  .choice-group label:has(input:checked) {
+    border-color: var(--ice);
+    background: var(--ice-light);
+    color: var(--navy);
+    font-weight: 700;
+  }
+
+  .form-submit {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .form-submit .btn { width: 100%; font-size: 1.1rem; }
+
+  .form-note {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  /* ---------- Result ---------- */
+  .result {
+    max-width: 760px;
+    margin: 24px auto 0;
+    background: var(--white);
+    border-radius: 18px;
+    padding: 30px 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    display: none;
+  }
+
+  .result.show { display: block; }
+
+  @media (max-width: 560px) {
+    .result { padding: 24px 18px; }
+  }
+
+  .result h3 {
+    color: var(--navy);
+    font-weight: 900;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+
+  .result p.hint { color: var(--muted); font-size: 0.9rem; margin-bottom: 14px; }
+
+  .result textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border: 1.5px solid #d7e2ec;
+    border-radius: 12px;
+    background: var(--snow);
+    color: var(--ink);
+    min-height: 240px;
+    resize: vertical;
+  }
+
+  .result-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .result-actions .btn { flex: 1; min-width: 180px; text-align: center; }
+
+  .btn-line {
+    background: #06c755;
+    color: var(--white);
+  }
+
+  .btn-line:hover { background: #05a648; }
+
+  .btn-copy {
+    background: var(--navy);
+    color: var(--white);
+  }
+
+  .btn-copy:hover { background: var(--navy-2); }
+
+  .copied-toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s, transform 0.25s;
+    z-index: 200;
+  }
+
+  .copied-toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.75);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.88rem;
+  }
+
+  footer .brand { justify-content: center; margin-bottom: 10px; font-size: 1rem; }
+
+  footer a { color: #8fd0f5; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav container">
+    <a class="brand" href="#top"><span class="flake">❄</span>Kelly Ski Japan</a>
+    <div class="nav-links">
+      <a href="#services">服務內容</a>
+      <a href="#steps">預約流程</a>
+      <a href="#resorts">熱門雪場</a>
+      <a href="#faq">常見問題</a>
+      <a class="nav-cta" href="#booking">立即預約</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <span class="eyebrow">❄ 日本滑雪一站式代辦</span>
+    <h1>想去日本滑雪？<br><span class="hl">課程・住宿・交通</span><br>一次幫你安排好</h1>
+    <p class="sub">不用自己查雪場、比飯店、找教練。<br>告訴 Kelly 你的日期和程度，其他的交給我們。</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#booking">填寫需求單，免費規劃 →</a>
+      <a class="btn btn-ghost" href="#services">看看服務內容</a>
+    </div>
+  </div>
+  <div class="hero-mountains" aria-hidden="true">
+    <svg viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 220 L240 90 L340 150 L520 40 L700 160 L860 70 L1050 180 L1200 100 L1440 200 L1440 220 Z" fill="#dbe9f4" opacity="0.5"/>
+      <path d="M0 220 L180 130 L360 190 L560 80 L760 200 L980 110 L1180 190 L1440 130 L1440 220 Z" fill="#eef5fa" opacity="0.8"/>
+      <path d="M0 220 L200 170 L420 210 L640 140 L900 215 L1120 160 L1320 210 L1440 180 L1440 220 Z" fill="#f7fafc"/>
+    </svg>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">SERVICES</span>
+      <h2>一站式服務，滑雪旅程零煩惱</h2>
+      <p>從第一次踩上雪板到進階衝粉雪，每個環節都有人幫你打點。</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon">⛷️</div>
+        <h3>滑雪課程與教練</h3>
+        <p>中文教練、私人課或團體課，依照你的程度與目標，安排最適合的教練與上課時段。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🏨</div>
+        <h3>住宿安排</h3>
+        <p>雪場飯店、溫泉旅館、公寓民宿，依預算與人數幫你比價、搶房、確認房型。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🚌</div>
+        <h3>交通接駁</h3>
+        <p>機場接送、雪場巴士、JR 車票，時間全部串好，拖著雪具也不怕迷路。</p>
+      </div>
+      <div class="card">
+        <div class="icon">🗓️</div>
+        <h3>行程規劃</h3>
+        <p>雪票、雪具租借、行前準備清單通通包辦，出發前一份行程表，照著走就對了。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps-section" id="steps">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">HOW IT WORKS</span>
+      <h2>四步驟，輕鬆出發</h2>
+      <p>填一次需求單，剩下的交給 Kelly。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>填寫需求單</h3>
+        <p>日期、人數、程度、預算，2 分鐘填完。</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>收到專屬方案</h3>
+        <p>Kelly 依需求規劃行程並報價，可以來回調整。</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>確認預訂</h3>
+        <p>方案確認後才付訂金，課程、住宿、交通一次訂好。</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>安心出發</h3>
+        <p>行前提醒＋完整行程表，到了雪場照表操課就好。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resorts">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">RESORTS</span>
+      <h2>熱門雪場任你選</h2>
+      <p>不知道去哪裡？告訴 Kelly 你的程度和喜好，幫你挑最適合的雪場。</p>
+    </div>
+    <div class="resorts">
+      <div class="resort">
+        <div class="banner"><h3>二世谷 Niseko</h3></div>
+        <div class="body">
+          <span class="region">北海道</span>
+          <p>世界知名的粉雪天堂，雪質鬆軟、雪量豐沛，國際化程度高，初學到進階都適合。</p>
+        </div>
+      </div>
+      <div class="resort">
+        <div class="banner"><h3>留壽都 Rusutsu</h3></div>
+        <div class="body">
+          <span class="region">北海道</span>
+          <p>北海道最大單一雪場，地形多元、人潮較少，親子友善，度假村設施完善。</p>
+        </div>
+      </div>
+      <div class="resort">
+        <div class="banner"><h3>富良野 Furano</h3></div>
+        <div class="body">
+          <span class="region">北海道</span>
+          <p>雪質乾爽的內陸雪場，纜車效率高、視野遼闊，市區溫泉美食一應俱全。</p>
+        </div>
+      </div>
+      <div class="resort">
+        <div class="banner"><h3>白馬 Hakuba</h3></div>
+        <div class="body">
+          <span class="region">長野</span>
+          <p>長野奧運場地，雪場群規模龐大、地形豐富，從緩坡到大鵰路線應有盡有。</p>
+        </div>
+      </div>
+      <div class="resort">
+        <div class="banner"><h3>野澤溫泉 Nozawa</h3></div>
+        <div class="body">
+          <span class="region">長野</span>
+          <p>百年溫泉小鎮與雪場合而為一，滑完雪泡外湯、逛老街，日本味最濃。</p>
+        </div>
+      </div>
+      <div class="resort">
+        <div class="banner"><h3>藏王溫泉 Zao</h3></div>
+        <div class="body">
+          <span class="region">山形</span>
+          <p>冬季限定樹冰奇景，滑雪加觀光一次滿足，溫泉街氛圍療癒。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">FAQ</span>
+      <h2>常見問題</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>完全沒滑過雪，也可以參加嗎？</summary>
+        <div class="answer">當然可以！大部分找 Kelly 的朋友都是第一次滑雪。我們會安排適合初學者的雪場與課程，教練會從穿雪鞋、走路開始教起，第一天就能體驗滑行的樂趣。</div>
+      </details>
+      <details>
+        <summary>費用怎麼計算？</summary>
+        <div class="answer">依照人數、日期、住宿等級與課程需求客製報價。填寫需求單後，Kelly 會免費幫你規劃並提供完整報價，覺得合適再預訂，不收規劃費。</div>
+      </details>
+      <details>
+        <summary>可以只安排教練課程，或只訂住宿嗎？</summary>
+        <div class="answer">可以！服務可以單點：只找中文教練、只訂雪場住宿、只安排接駁都沒問題。在需求單勾選你需要的項目即可。</div>
+      </details>
+      <details>
+        <summary>雪衣、雪板需要自己準備嗎？</summary>
+        <div class="answer">不用特地購買。雪衣、雪褲、雪板、雪鞋、安全帽都能在當地租借，Kelly 會事先幫你預約好尺寸，到場即取。建議自備的只有脖圍、手套、雪鏡等貼身小物。</div>
+      </details>
+      <details>
+        <summary>什麼時候需要付訂金？</summary>
+        <div class="answer">行程方案與報價都確認後才需要付訂，細節會在報價時一併說明，確認前都不會產生任何費用。</div>
+      </details>
+      <details>
+        <summary>幾月去日本滑雪最好？</summary>
+        <div class="answer">日本雪季大約是 12 月中到隔年 3 月底。1 月至 2 月雪況最穩定、粉雪最多；12 月與 3 月人潮較少、價格較親切。北海道雪季通常比本州更長。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="booking">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">BOOKING</span>
+      <h2>填寫需求單</h2>
+      <p>2 分鐘填完，Kelly 會透過 LINE 與你聯繫，免費規劃專屬行程。</p>
+    </div>
+
+    <form class="booking" id="bookingForm" novalidate>
+      <div class="form-grid">
+        <div class="field">
+          <label for="fName">怎麼稱呼你 <span class="req">*</span></label>
+          <input type="text" id="fName" name="name" placeholder="例：陳小姐 / Gordon" required>
+        </div>
+        <div class="field">
+          <label for="fLine">你的 LINE 名稱或 ID <span class="req">*</span></label>
+          <input type="text" id="fLine" name="line" placeholder="方便 Kelly 認出你" required>
+        </div>
+        <div class="field">
+          <label for="fAdults">大人人數 <span class="req">*</span></label>
+          <input type="number" id="fAdults" name="adults" min="1" max="50" placeholder="例：2" required>
+        </div>
+        <div class="field">
+          <label for="fKids">小孩人數 <span class="opt">（12 歲以下）</span></label>
+          <input type="number" id="fKids" name="kids" min="0" max="50" placeholder="例：0">
+        </div>
+        <div class="field">
+          <label for="fDate">預計出發日期 <span class="req">*</span></label>
+          <input type="text" id="fDate" name="date" placeholder="例：2027/1 中旬，或確切日期" required>
+        </div>
+        <div class="field">
+          <label for="fDays">預計天數</label>
+          <select id="fDays" name="days">
+            <option value="">請選擇</option>
+            <option>3 天以內</option>
+            <option>4－5 天</option>
+            <option>6－7 天</option>
+            <option>8 天以上</option>
+            <option>還不確定</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>滑雪程度 <span class="req">*</span></label>
+          <div class="choice-group" id="gLevel">
+            <label><input type="radio" name="level" value="完全新手（沒滑過）" required>完全新手</label>
+            <label><input type="radio" name="level" value="初學（滑過 1－2 次）">初學（滑過 1－2 次）</label>
+            <label><input type="radio" name="level" value="中級（可自行滑行）">中級</label>
+            <label><input type="radio" name="level" value="進階">進階</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label>想玩的板類</label>
+          <div class="choice-group" id="gBoard">
+            <label><input type="radio" name="board" value="單板 Snowboard">單板 Snowboard</label>
+            <label><input type="radio" name="board" value="雙板 Ski">雙板 Ski</label>
+            <label><input type="radio" name="board" value="都想試 / 還不確定">都想試／還不確定</label>
+          </div>
+        </div>
+        <div class="field full">
+          <label>需要哪些服務？<span class="opt">（可複選）</span></label>
+          <div class="choice-group" id="gServices">
+            <label><input type="checkbox" name="services" value="滑雪課程／教練">滑雪課程／教練</label>
+            <label><input type="checkbox" name="services" value="住宿">住宿</label>
+            <label><input type="checkbox" name="services" value="交通接駁">交通接駁</label>
+            <label><input type="checkbox" name="services" value="雪具租借">雪具租借</label>
+            <label><input type="checkbox" name="services" value="雪票">雪票</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="fResort">想去的雪場</label>
+          <select id="fResort" name="resort">
+            <option value="">還不確定，請 Kelly 推薦</option>
+            <option>二世谷 Niseko</option>
+            <option>留壽都 Rusutsu</option>
+            <option>富良野 Furano</option>
+            <option>白馬 Hakuba</option>
+            <option>野澤溫泉 Nozawa</option>
+            <option>藏王溫泉 Zao</option>
+            <option>苗場 Naeba</option>
+            <option>輕井澤 Karuizawa</option>
+            <option>其他（備註說明）</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fBudget">每人預算 <span class="opt">（不含機票）</span></label>
+          <select id="fBudget" name="budget">
+            <option value="">還沒有想法</option>
+            <option>3 萬台幣以內</option>
+            <option>3－5 萬台幣</option>
+            <option>5－8 萬台幣</option>
+            <option>8 萬台幣以上</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="fNote">其他備註 <span class="opt">（飲食、特殊需求、想問的都可以寫）</span></label>
+          <textarea id="fNote" name="note" placeholder="例：有一位長輩同行不滑雪、希望教練會教小朋友…"></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">產生需求訊息 →</button>
+        </div>
+        <p class="form-note">送出後會產生一則整理好的訊息，一鍵傳給 Kelly 的 LINE，不會外傳任何資料。</p>
+      </div>
+    </form>
+
+    <div class="result" id="result">
+      <h3>✅ 需求單完成！</h3>
+      <p class="hint">訊息已幫你整理好，按下方按鈕傳給 Kelly，或複製後貼到 LINE。</p>
+      <textarea id="resultText" readonly></textarea>
+      <div class="result-actions">
+        <button class="btn btn-line" id="btnLine">用 LINE 傳給 Kelly</button>
+        <button class="btn btn-copy" id="btnCopy">複製訊息</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <a class="brand" href="#top"><span class="flake">❄</span>Kelly Ski Japan</a>
+    <p>日本滑雪一站式服務｜課程・住宿・交通</p>
+    <p>有任何問題，歡迎<a href="#booking">填寫需求單</a>或透過 LINE 聯繫 Kelly。</p>
+  </div>
+</footer>
+
+<div class="copied-toast" id="toast">已複製，貼到 LINE 傳給 Kelly 吧！</div>
+
+<script>
+  // ====== 設定（Kelly 上線前請修改這裡）======
+  // LINE 官方帳號 ID 請含 @，例如 "@123abcd"；
+  // 個人帳號請填加好友連結後面的 ID，例如 "kelly123"（即 line.me/ti/p/~kelly123）。
+  const KELLY_LINE_ID = "";
+  // ==========================================
+
+  const form = document.getElementById("bookingForm");
+  const result = document.getElementById("result");
+  const resultText = document.getElementById("resultText");
+  const toast = document.getElementById("toast");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const services = data.getAll("services");
+    const lines = [
+      "【日本滑雪需求單】",
+      "👤 稱呼：" + data.get("name").trim(),
+      "💬 LINE：" + data.get("line").trim(),
+      "👥 人數：大人 " + data.get("adults") + " 位" +
+        (data.get("kids") ? "、小孩 " + data.get("kids") + " 位" : ""),
+      "📅 日期：" + data.get("date").trim() +
+        (data.get("days") ? "（" + data.get("days") + "）" : ""),
+      "🎿 程度：" + (data.get("level") || "未填"),
+    ];
+    if (data.get("board")) lines.push("🛷 板類：" + data.get("board"));
+    lines.push("🧾 需要服務：" + (services.length ? services.join("、") : "請 Kelly 建議"));
+    lines.push("🗻 想去雪場：" + (data.get("resort") || "還不確定，請 Kelly 推薦"));
+    if (data.get("budget")) lines.push("💰 每人預算：" + data.get("budget"));
+    if (data.get("note").trim()) lines.push("📝 備註：" + data.get("note").trim());
+
+    resultText.value = lines.join("\n");
+    result.classList.add("show");
+    result.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+
+  async function copyMessage() {
+    try {
+      await navigator.clipboard.writeText(resultText.value);
+    } catch {
+      resultText.select();
+      document.execCommand("copy");
+    }
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 2200);
+  }
+
+  document.getElementById("btnCopy").addEventListener("click", copyMessage);
+
+  document.getElementById("btnLine").addEventListener("click", async () => {
+    await copyMessage();
+    if (!KELLY_LINE_ID) {
+      alert("請先在網頁設定中填入 Kelly 的 LINE ID（訊息已複製，也可以手動貼給 Kelly）。");
+      return;
+    }
+    let url;
+    if (KELLY_LINE_ID.startsWith("@")) {
+      // 官方帳號：可直接帶入預填訊息
+      url = "https://line.me/R/oaMessage/" + encodeURIComponent(KELLY_LINE_ID) + "/?" +
+            encodeURIComponent(resultText.value);
+    } else {
+      // 個人帳號：開啟加好友頁，訊息已複製、貼上即可
+      url = "https://line.me/ti/p/~" + encodeURIComponent(KELLY_LINE_ID);
+    }
+    window.open(url, "_blank");
+  });
+</script>
+
+</body>
+</html>
