@@ -66,6 +66,14 @@ const KELLY_VIDEOS = [
 
 > 建議流程：影片平常照舊發到 IG／YouTube，挑精華貼進這份清單就好，網站零維護負擔。
 
+## 需求單自動通知（客人不用按 LINE 發送）
+
+`backend/` 資料夾有一支 Google Apps Script：部署後客人按「送出」，
+需求單會**直接推播到管理者的 LINE**並自動寫入 Google 試算表。
+部署教學見 [`backend/SETUP.md`](backend/SETUP.md)（約 10 分鐘），
+完成後把網址與密語填入 `main.js` 的 `KELLY_WEBHOOK_URL`／`KELLY_WEBHOOK_KEY`。
+未設定時網站自動維持「複製訊息＋開 LINE」流程，不會壞。
+
 ## 如何部署（免費，用 GitHub Pages）
 
 1. 進入這個 repo 的 **Settings → Pages**
