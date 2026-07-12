@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服務項目｜Kelly Ski Japan 日本滑雪一站式代辦</title>
+<meta name="description" content="滑雪課程與中文教練、雪場住宿、機場接駁交通、雪票與裝備租借——Kelly 的四大服務可以單點也可以整套安排。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Cpath d='M10 44 26 18l10 14 6-8 12 20Z' fill='%236fc3f7'/%3E%3Cpath d='M14 52c8 0 10-5 18-5s10 5 18 5' stroke='%23ff5a3c' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,800;0,900;1,700;1,900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="services">
+
+<!-- ======= 手繪圖示庫 ======= -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 24 24"><path d="M2.5 16.5 8.5 6l3.5 5 3.5-5 6 10.5"/><path d="M4 20.5c3.5 0 4.5-2.6 8-2.6s4.5 2.6 8 2.6"/></symbol>
+  <symbol id="i-ski" viewBox="0 0 24 24"><circle cx="15" cy="4.2" r="1.9"/><path d="M14 7.2 10.5 11l2.6 3-1.8 3.6"/><path d="M13.4 8.6l3.4 1.6 2.2 3.4"/><path d="M4.5 19.2 19 15.4"/><path d="M6 21.8 20.5 18"/></symbol>
+  <symbol id="i-board" viewBox="0 0 24 24"><g transform="rotate(-22 12 12)"><rect x="3" y="9.6" width="18" height="4.8" rx="2.4"/><path d="M8.5 9.6v4.8M15.5 9.6v4.8"/></g></symbol>
+  <symbol id="i-coach" viewBox="0 0 24 24"><path d="M3.5 10.2 13.5 6v12l-10-4.2v-3.6Z"/><path d="M6.5 15.4V19a1.5 1.5 0 0 0 3 0v-2.2"/><path d="M16.5 9.2a4.6 4.6 0 0 1 0 5.6"/><path d="M19 7a8 8 0 0 1 0 10"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19V9"/><path d="M3 13h13.5A4.5 4.5 0 0 1 21 17.5V19"/><path d="M3 17h18"/><circle cx="7.2" cy="10.8" r="1.8"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="13" rx="2.5"/><path d="M3.5 11.5h17"/><path d="M12 4.5v7"/><circle cx="7.6" cy="19.4" r="1.4"/><circle cx="16.4" cy="19.4" r="1.4"/></symbol>
+  <symbol id="i-lift" viewBox="0 0 24 24"><path d="M2 5l20-2.6"/><path d="M12.4 3.9V8"/><rect x="7.5" y="8" width="9.8" height="9.5" rx="2.4"/><path d="M7.5 12.6h9.8"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6v1.2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/><path d="M14.5 6.5v11" stroke-dasharray="2.4 2.6"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path d="M5 13a7 7 0 0 1 14 0v2.4a1.6 1.6 0 0 1-1.6 1.6H6.6A1.6 1.6 0 0 1 5 15.4Z"/><path d="M5 13h14"/><path d="M9 17v1.3a3 3 0 0 0 6 0V17"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.8" y="5.5" width="16.4" height="15" rx="2.5"/><path d="M3.8 10.5h16.4"/><path d="M8.5 3.2v4M15.5 3.2v4"/><path d="M8 14.5h3M13 14.5h3M8 17.5h3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5S5.5 15.8 5.5 11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 10.5-6.5 10.5Z"/><circle cx="12" cy="10.8" r="2.4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 7A2.8 2.8 0 0 1 6.8 4.2h10.4A2.8 2.8 0 0 1 20 7v6.4a2.8 2.8 0 0 1-2.8 2.8H10l-4.6 4v-4h-.4A2.8 2.8 0 0 1 4 13.4Z"/><path d="M8.4 10.7h.01M12 10.7h.01M15.6 10.7h.01" stroke-width="2.6"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2.8v18.4"/><path d="M4 7.4l16 9.2M20 7.4 4 16.6"/><path d="M9.6 4.4 12 6.5l2.4-2.1M14.4 19.6 12 17.5l-2.4 2.1"/></symbol>
+  <symbol id="i-powder" viewBox="0 0 24 24"><path d="M3 9.4c3 0 3 2.2 6 2.2s3-2.2 6-2.2 3 2.2 6 2.2"/><path d="M3 15c3 0 3 2.2 6 2.2s3-2.2 6-2.2 3 2.2 6 2.2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M8.2 12.4l2.6 2.7 5-5.4"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M4.5 12.8l5 5L19.5 6.6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="M13.5 5.8 19.7 12l-6.2 6.2"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9.4l6 6 6-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3.4 2.2"/></symbol>
+  <symbol id="i-yen" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M8.8 7.6 12 12.4l3.2-4.8M12 12.4V17M9.4 13.6h5.2M9.4 15.8h5.2"/></symbol>
+  <symbol id="i-level" viewBox="0 0 24 24"><path d="M4.5 19.5v-3.4M9.5 19.5v-6.8M14.5 19.5V9.3M19.5 19.5V5.5"/></symbol>
+  <symbol id="i-group" viewBox="0 0 24 24"><circle cx="9" cy="8.4" r="3.1"/><path d="M3.4 19.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="16.9" cy="9.6" r="2.4"/><path d="M16.4 19.6a5.4 5.4 0 0 1 4.2-5.2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 19 5.6v5.5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V5.6Z"/><path d="m8.8 11.7 2.3 2.3 4.1-4.3"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 4.6A1.6 1.6 0 0 1 8.1 3h5.7L18.5 7.7V19.4a1.6 1.6 0 0 1-1.6 1.6H8.1a1.6 1.6 0 0 1-1.6-1.6Z"/><path d="M13.8 3v4.9h4.7"/><path d="M9.6 12.4h5.2M9.6 15.8h5.2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M20.6 3.4 3.4 10.2l6.7 2.7 2.7 7.7 7.8-17.2Z"/><path d="M20.6 3.4 10.1 12.9"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.6" y="8.6" width="11" height="11.8" rx="2"/><path d="M15.4 8.6V6.2a2 2 0 0 0-2-2H6.2a2 2 0 0 0-2 2v7.2a2 2 0 0 0 2 2h2.4"/></symbol>
+  <symbol id="i-onsen" viewBox="0 0 24 24"><path d="M4.5 14h15v.8a7.5 7.5 0 0 1-15 0Z"/><path d="M8.6 4.5c-1 1.4.8 2.4-.2 3.8M12 4.5c-1 1.4.8 2.4-.2 3.8M15.4 4.5c-1 1.4.8 2.4-.2 3.8"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6.5 21.5v-17"/><path d="M6.5 5c2-1.3 4-1.3 6 0s4 1.3 6 0v7.4c-2 1.3-4 1.3-6 0s-4-1.3-6 0"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7.2h16M4 12h16M4 16.8h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
+</svg>
+
+<!-- ======= 導覽列 ======= -->
+<header class="site-nav scrolled">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <svg class="mark ico" style="width:34px;height:34px;color:#6fc3f7"><use href="#i-mark"/></svg>
+      <span class="brand-txt"><b>KELLY SKI</b><span>JAPAN SNOW CONCIERGE</span></span>
+    </a>
+    <button class="nav-burger" aria-label="開啟選單">
+      <svg class="ico ic-menu"><use href="#i-menu"/></svg>
+      <svg class="ico ic-close"><use href="#i-close"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="services.html" class="active">服務項目</a>
+      <a href="resorts.html">雪場介紹</a>
+      <a href="guide.html">預約指南</a>
+      <a href="booking.html" class="nav-cta"><svg class="ico"><use href="#i-send"/></svg>立即預約</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======= 內頁 Hero ======= -->
+<section class="page-hero">
+  <div class="ph-art" aria-hidden="true">
+    <svg viewBox="0 0 1600 460" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1600" height="460" fill="#0b1220"/>
+      <g stroke="#6fc3f7" stroke-width="2" fill="none" opacity="0.14">
+        <path d="M-20 380 300 190l200 140 260-200 260 190 240-160 260 180 120-80"/>
+        <path d="M-20 440 280 260l220 130 260-180 260 170 240-140 280 160"/>
+      </g>
+      <g stroke="#ff5a3c" stroke-width="3" stroke-linecap="round" opacity="0.5">
+        <path d="M1180 96h84"/><path d="M1240 126h60"/><path d="M1210 156h44"/>
+      </g>
+      <g fill="#ffffff"><circle cx="240" cy="90" r="2.6" opacity="0.4"/><circle cx="620" cy="60" r="2.2" opacity="0.35"/><circle cx="1010" cy="110" r="2.6" opacity="0.4"/><circle cx="1420" cy="70" r="2.2" opacity="0.35"/></g>
+    </svg>
+  </div>
+  <span class="ghost">SERVICE</span>
+  <div class="container">
+    <p class="crumbs">HOME <span class="sep">/</span> SERVICES</p>
+    <h1>服務項目</h1>
+    <p class="lede">四大服務，可以整套安排、也可以單點。你出需求，Kelly 出方案。</p>
+  </div>
+</section>
+
+<!-- ======= 01 課程與教練 ======= -->
+<div class="container">
+  <article class="svc-row" id="lessons">
+    <div class="svc-visual reveal">
+      <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lsn-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#5f9cc8"/><stop offset="1" stop-color="#c4def0"/>
+          </linearGradient>
+          <linearGradient id="lsn-slope" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d3e6f3"/>
+          </linearGradient>
+        </defs>
+        <rect width="640" height="440" fill="url(#lsn-sky)"/>
+        <circle cx="520" cy="80" r="40" fill="#fff8e8" opacity="0.9"/>
+        <path d="M-20 260 150 120l150 140Z" fill="#3d719e"/>
+        <path d="M150 120 110 196l24-16 16 18 20-26 14 12Z" fill="#eef6fc"/>
+        <path d="M640 200c-200 20-380 90-660 160V460h660Z" fill="url(#lsn-slope)"/>
+        <!-- S 彎滑行軌跡 -->
+        <path d="M560 220C480 260 520 300 430 330 340 360 380 400 280 424" stroke="#9dc3de" stroke-width="4" stroke-dasharray="10 12" fill="none" opacity="0.8"/>
+        <!-- 旗門 -->
+        <g>
+          <path d="M497 254v46" stroke="#ff5a3c" stroke-width="5" stroke-linecap="round"/>
+          <path d="M497 254l30 10-30 10Z" fill="#ff5a3c"/>
+          <path d="M362 340v44" stroke="#2b7fb8" stroke-width="5" stroke-linecap="round"/>
+          <path d="M362 340l30 10-30 10Z" fill="#2b7fb8"/>
+        </g>
+        <!-- 教練 -->
+        <g transform="translate(150 300)">
+          <circle cx="0" cy="-58" r="12" fill="#0b1220"/>
+          <path d="M-2 -46c8-2 16 2 18 10l6 24-12 3-6-20-10 2c-8 2-14-3-14-10 0-6 8-9 18-9Z" fill="#ff5a3c"/>
+          <path d="M-10 -12 -14 32M6 -10 14 32" stroke="#0b1220" stroke-width="8" stroke-linecap="round"/>
+          <path d="M-26 36h28M0 40h28" stroke="#0b1220" stroke-width="5" stroke-linecap="round"/>
+          <path d="M14 -38 40 -50" stroke="#ff5a3c" stroke-width="7" stroke-linecap="round"/>
+        </g>
+        <!-- 學員（小小雪犁姿勢） -->
+        <g transform="translate(255 350)">
+          <circle cx="0" cy="-44" r="10" fill="#0b1220"/>
+          <path d="M-8 -34h16l6 22h-28Z" fill="#2b7fb8"/>
+          <path d="M-9 -12 -18 22M9 -12 18 22" stroke="#0b1220" stroke-width="7" stroke-linecap="round"/>
+          <path d="M-30 26 -6 20M6 20l24 6" stroke="#0b1220" stroke-width="4.5" stroke-linecap="round"/>
+        </g>
+        <g fill="#ffffff"><circle cx="80" cy="70" r="3" opacity="0.7"/><circle cx="300" cy="50" r="2.4" opacity="0.6"/><circle cx="600" cy="150" r="2.6" opacity="0.6"/><circle cx="420" cy="120" r="2" opacity="0.5"/></g>
+      </svg>
+      <span class="tagchip">Lessons &amp; Coach</span>
+    </div>
+    <div class="svc-detail reveal" style="--d:0.1s">
+      <span class="num en">SERVICE — 01</span>
+      <h2>滑雪課程與教練</h2>
+      <p>不管是第一次踩上雪，還是想突破卡關的技巧，Kelly 依照你的程度、板類與目標，配對最適合的教練與課程時段。</p>
+      <ul class="svc-list">
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>中文教練優先安排</b><small>聽得懂，才學得快。也可安排英文、日文教練。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>私人課／團體課</b><small>一對一密集進步，或親友同班共學同樂。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>單板・雙板都有</b><small>初學體驗、進階刻滑、粉雪樹林課程皆可安排。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>兒童課程</b><small>有帶小朋友經驗的教練與雪上樂園行程。</small></span></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ======= 02 住宿安排 ======= -->
+  <article class="svc-row flip" id="stay">
+    <div class="svc-visual reveal">
+      <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="sty-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0c1526"/><stop offset="1" stop-color="#31486e"/>
+          </linearGradient>
+        </defs>
+        <rect width="640" height="440" fill="url(#sty-sky)"/>
+        <circle cx="520" cy="86" r="34" fill="#f4ead6"/>
+        <circle cx="508" cy="78" r="30" fill="#0c1526" opacity="0.25"/>
+        <path d="M-20 300 170 150l190 150Z" fill="#16304f"/>
+        <path d="M170 150 130 226l24-16 16 18 20-26 14 12Z" fill="#d7e8f5" opacity="0.9"/>
+        <!-- 小屋 -->
+        <g>
+          <rect x="360" y="238" width="170" height="112" fill="#1a2438"/>
+          <path d="M340 244 445 156l105 88Z" fill="#eef4fa"/>
+          <path d="M352 242 445 164l93 78-8 8-85-70-84 70Z" fill="#c9dcec"/>
+          <rect x="382" y="268" width="26" height="30" rx="3" fill="#ffb35c"/>
+          <rect x="428" y="268" width="26" height="30" rx="3" fill="#ffc97e"/>
+          <rect x="474" y="268" width="26" height="30" rx="3" fill="#ffb35c"/>
+          <rect x="418" y="312" width="34" height="38" rx="3" fill="#31486e"/>
+          <!-- 煙囪 -->
+          <rect x="492" y="176" width="18" height="42" fill="#1a2438"/>
+          <path d="M496 168c-5 7 4 11-2 19" stroke="#cfe0ee" stroke-width="3.5" stroke-linecap="round" fill="none" opacity="0.7"/>
+        </g>
+        <!-- 前景雪丘與樹 -->
+        <path d="M-20 360c140-24 300-26 680-2V460H-20Z" fill="#e9f3fb"/>
+        <g fill="#101c30">
+          <path d="M80 356 116 286l36 70Z"/><path d="M136 358 164 300l28 58Z"/>
+          <path d="M560 348l30-58 30 58Z"/>
+        </g>
+        <g fill="#ffffff"><circle cx="120" cy="90" r="2.6" opacity="0.6"/><circle cx="280" cy="60" r="2.2" opacity="0.5"/><circle cx="240" cy="140" r="2.6" opacity="0.5"/><circle cx="600" cy="200" r="2.4" opacity="0.5"/><circle cx="330" cy="210" r="2" opacity="0.45"/></g>
+      </svg>
+      <span class="tagchip">Stay &amp; Lodging</span>
+    </div>
+    <div class="svc-detail reveal" style="--d:0.1s">
+      <span class="num en">SERVICE — 02</span>
+      <h2>住宿安排</h2>
+      <p>雪季一房難求，越早卡位越好。Kelly 依你的預算、人數與行程，比價搶房、確認房型，把最順的位置留給你。</p>
+      <ul class="svc-list">
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>Ski-in / Ski-out 雪場飯店</b><small>走出門就是雪道，把時間留給滑雪。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>溫泉旅館</b><small>滑完雪泡湯，一泊二食的日式款待。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>公寓與包棟民宿</b><small>親子、多人團的高 CP 選擇，自炊也方便。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>依預算比價</b><small>同樣的價錢，幫你住到更好的位置。</small></span></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ======= 03 交通接駁 ======= -->
+  <article class="svc-row" id="transfer">
+    <div class="svc-visual reveal">
+      <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="trf-sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#7fb0d5"/><stop offset="1" stop-color="#d8eaf6"/>
+          </linearGradient>
+        </defs>
+        <rect width="640" height="440" fill="url(#trf-sky)"/>
+        <path d="M-20 280 140 140l160 140Z" fill="#4a7aa5"/>
+        <path d="M140 140 104 212l22-15 15 17 19-24 13 11Z" fill="#eef6fc"/>
+        <path d="M300 280 460 120l200 160Z" fill="#35648f"/>
+        <path d="M460 120 420 200l25-17 17 19 21-27 15 13Z" fill="#eef6fc"/>
+        <path d="M-20 320h680v140H-20Z" fill="#e6f1f9"/>
+        <!-- 高架橋 -->
+        <rect x="-20" y="292" width="680" height="14" fill="#9db8cd"/>
+        <g fill="#9db8cd">
+          <rect x="60" y="306" width="16" height="60"/><rect x="220" y="306" width="16" height="60"/>
+          <rect x="380" y="306" width="16" height="60"/><rect x="540" y="306" width="16" height="60"/>
+        </g>
+        <!-- 列車 -->
+        <g>
+          <path d="M60 250c0-14 11-24 26-24h430c26 0 52 8 70 24l16 14c4 4 2 12-6 12H86c-15 0-26-10-26-24Z" fill="#ffffff"/>
+          <path d="M60 250c0-14 11-24 26-24h430c26 0 52 8 70 24l16 14c4 4 2 12-6 12H86c-15 0-26-10-26-24Z" fill="none" stroke="#b9d2e4" stroke-width="2"/>
+          <path d="M92 238h380v14H92Z" fill="#16304f"/>
+          <path d="M96 262h486v8H96Z" fill="#ff5a3c"/>
+          <circle cx="560" cy="246" r="6" fill="#16304f"/>
+        </g>
+        <!-- 速度線 -->
+        <g stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.85">
+          <path d="M18 236h30"/><path d="M2 254h38"/><path d="M22 272h26"/>
+        </g>
+        <g fill="#ffffff"><circle cx="180" cy="70" r="2.8" opacity="0.7"/><circle cx="420" cy="60" r="2.2" opacity="0.6"/><circle cx="560" cy="90" r="2.6" opacity="0.6"/><circle cx="90" cy="120" r="2" opacity="0.5"/></g>
+      </svg>
+      <span class="tagchip">Transfer &amp; Transport</span>
+    </div>
+    <div class="svc-detail reveal" style="--d:0.1s">
+      <span class="num en">SERVICE — 03</span>
+      <h2>交通接駁</h2>
+      <p>拖著雪具轉車最痛苦。從落地那一刻到抵達雪場，每一段交通都幫你接好，時刻表整理成一張行程表。</p>
+      <ul class="svc-list">
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>機場接送</b><small>新千歲、成田、羽田、名古屋等機場到雪場的接駁安排。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>雪場巴士與包車</b><small>多人同行可包車，行李雪具一車到底。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>JR 新幹線票券</b><small>本州雪場快速直達，車票提前買好。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>時間全部串好</b><small>轉乘銜接算到分鐘，不用自己研究時刻表。</small></span></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- ======= 04 雪票與裝備 ======= -->
+  <article class="svc-row flip" id="gear">
+    <div class="svc-visual reveal">
+      <svg viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <rect width="640" height="440" fill="#e9f4fc"/>
+        <circle cx="540" cy="70" r="90" fill="#d8ecfa"/>
+        <circle cx="80" cy="400" r="70" fill="#ddeefb"/>
+        <!-- 路線 -->
+        <path d="M60 90C180 60 260 140 350 110s180 30 240 10" stroke="#9dc3de" stroke-width="4" stroke-dasharray="2 14" stroke-linecap="round" fill="none"/>
+        <g>
+          <path d="M60 96c-9-9-15-17-15-25a15 15 0 0 1 30 0c0 8-6 16-15 25Z" fill="#ff5a3c"/>
+          <circle cx="60" cy="70" r="5.5" fill="#ffffff"/>
+        </g>
+        <g>
+          <path d="M590 106c-9-9-15-17-15-25a15 15 0 0 1 30 0c0 8-6 16-15 25Z" fill="#16304f"/>
+          <circle cx="590" cy="80" r="5.5" fill="#ffffff"/>
+        </g>
+        <!-- 雪票 -->
+        <g transform="rotate(-8 240 250)">
+          <rect x="120" y="190" width="240" height="120" rx="16" fill="#ffffff" stroke="#c9dcec" stroke-width="2"/>
+          <rect x="120" y="190" width="240" height="34" rx="16" fill="#16304f"/>
+          <rect x="120" y="208" width="240" height="16" fill="#16304f"/>
+          <path d="M282 200v100" stroke="#c9dcec" stroke-width="2.5" stroke-dasharray="6 7"/>
+          <circle cx="322" cy="252" r="12" fill="#e9f4fc" stroke="#c9dcec" stroke-width="2"/>
+          <rect x="140" y="240" width="110" height="10" rx="5" fill="#d8e6f2"/>
+          <rect x="140" y="262" width="80" height="10" rx="5" fill="#e4eef7"/>
+          <path d="M138 199l8 12h-16Z" fill="#6fc3f7"/>
+          <path d="M156 199l8 12h-16Z" fill="#ff5a3c"/>
+        </g>
+        <!-- 安全帽 -->
+        <g transform="translate(430 260)">
+          <path d="M0 46A62 62 0 0 1 124 46v18a12 12 0 0 1-12 12H12A12 12 0 0 1 0 64Z" fill="#16304f"/>
+          <path d="M0 46h124v10H0Z" fill="#0b1220"/>
+          <rect x="8" y="50" width="108" height="24" rx="12" fill="#6fc3f7"/>
+          <rect x="16" y="56" width="56" height="12" rx="6" fill="#bfe3fb"/>
+          <path d="M30 6c18-9 46-9 64 0" stroke="#ff5a3c" stroke-width="6" stroke-linecap="round" fill="none"/>
+        </g>
+        <!-- 雪杖交叉 -->
+        <g stroke-linecap="round">
+          <path d="M120 356 260 416" stroke="#16304f" stroke-width="7"/>
+          <path d="M250 356 110 416" stroke="#ff5a3c" stroke-width="7"/>
+          <circle cx="120" cy="356" r="9" fill="#16304f"/>
+          <circle cx="250" cy="356" r="9" fill="#ff5a3c"/>
+        </g>
+        <g fill="#ffffff"><circle cx="500" cy="180" r="4" opacity="0.9"/><circle cx="360" cy="60" r="3" opacity="0.9"/><circle cx="600" cy="330" r="4" opacity="0.9"/></g>
+      </svg>
+      <span class="tagchip">Pass &amp; Gear</span>
+    </div>
+    <div class="svc-detail reveal" style="--d:0.1s">
+      <span class="num en">SERVICE — 04</span>
+      <h2>雪票、裝備與行程規劃</h2>
+      <p>纜車票、雪具、雪服，出發前全部預約好尺寸與天數，抵達直接領取。再附上一份完整行程表，照著走就對了。</p>
+      <ul class="svc-list">
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>纜車雪票代購</b><small>多日票、雪場聯票，怎麼買最划算幫你算好。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>雪具雪服租借</b><small>板、鞋、安全帽、雪衣雪褲，尺寸事先登記。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>行前準備清單</b><small>該帶什麼、怎麼穿，第一次滑雪也不慌。</small></span></li>
+        <li><svg class="ico"><use href="#i-tick"/></svg><span><b>完整行程表</b><small>交通、課程、住宿時間軸整理成一張表。</small></span></li>
+      </ul>
+    </div>
+  </article>
+</div>
+
+<!-- ======= 單點服務說明 ======= -->
+<section class="on-dark" style="padding:80px 0">
+  <span class="ghost" style="top:10px;right:0;">FLEXIBLE</span>
+  <div class="container" style="text-align:center;position:relative;z-index:2">
+    <div class="sec-head center reveal" style="margin-bottom:26px">
+      <p class="eyebrow" style="justify-content:center">A La Carte</p>
+      <h2>不需要整套？<span style="color:var(--k-ice)">單點也歡迎</span></h2>
+      <p class="sub">只想找中文教練、只想訂雪場住宿、只需要機場接送——都可以。在需求單勾選你需要的項目就好。</p>
+    </div>
+    <a class="btn btn-primary reveal" href="booking.html">告訴 Kelly 你需要什麼<svg class="ico slide"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<!-- ======= Footer ======= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <svg class="ico" style="width:32px;height:32px;color:#6fc3f7"><use href="#i-mark"/></svg>
+          <span class="brand-txt"><b>KELLY SKI</b><span>JAPAN SNOW CONCIERGE</span></span>
+        </a>
+        <p>日本滑雪一站式代辦。課程、教練、住宿、交通，一則訊息全部搞定。</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <nav>
+          <a href="index.html">首頁</a>
+          <a href="services.html">服務項目</a>
+          <a href="resorts.html">雪場介紹</a>
+          <a href="guide.html">預約指南</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <nav>
+          <a href="services.html#lessons">課程與教練</a>
+          <a href="services.html#stay">住宿安排</a>
+          <a href="services.html#transfer">交通接駁</a>
+          <a href="services.html#gear">雪票與裝備</a>
+        </nav>
+      </div>
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <p>準備好了嗎？填寫需求單，Kelly 透過 LINE 與你聯繫。</p>
+        <a class="btn btn-primary" href="booking.html">立即預約<svg class="ico slide"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Kelly Ski Japan. All rights reserved.</span>
+      <span class="en">MADE FOR POWDER LOVERS</span>
+    </div>
+  </div>
+  <span class="foot-watermark">KELLY SKI JAPAN</span>
+</footer>
+
+<a class="fab-line" href="booking.html" aria-label="LINE 諮詢">
+  <svg class="ico"><use href="#i-chat"/></svg><span>LINE 諮詢</span>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>

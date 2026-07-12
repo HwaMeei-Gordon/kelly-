@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>立即預約｜Kelly Ski Japan 日本滑雪一站式代辦</title>
+<meta name="description" content="兩分鐘填寫滑雪需求單：日期、人數、程度、預算，自動整理成訊息一鍵傳給 Kelly 的 LINE，免費規劃專屬行程。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1220'/%3E%3Cpath d='M10 44 26 18l10 14 6-8 12 20Z' fill='%236fc3f7'/%3E%3Cpath d='M14 52c8 0 10-5 18-5s10 5 18 5' stroke='%23ff5a3c' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,500;0,700;0,800;0,900;1,700;1,900&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .booking-page {
+    background:
+      radial-gradient(70% 46% at 84% 6%, rgba(111, 195, 247, 0.14), transparent 62%),
+      radial-gradient(50% 40% at 6% 92%, rgba(255, 90, 60, 0.1), transparent 60%),
+      var(--k-black);
+    min-height: 100vh;
+    padding: calc(var(--nav-h) + 72px) 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+  .booking-page .ghost { top: 90px; right: -30px; }
+</style>
+</head>
+<body data-page="booking">
+
+<!-- ======= 手繪圖示庫 ======= -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-mark" viewBox="0 0 24 24"><path d="M2.5 16.5 8.5 6l3.5 5 3.5-5 6 10.5"/><path d="M4 20.5c3.5 0 4.5-2.6 8-2.6s4.5 2.6 8 2.6"/></symbol>
+  <symbol id="i-ski" viewBox="0 0 24 24"><circle cx="15" cy="4.2" r="1.9"/><path d="M14 7.2 10.5 11l2.6 3-1.8 3.6"/><path d="M13.4 8.6l3.4 1.6 2.2 3.4"/><path d="M4.5 19.2 19 15.4"/><path d="M6 21.8 20.5 18"/></symbol>
+  <symbol id="i-board" viewBox="0 0 24 24"><g transform="rotate(-22 12 12)"><rect x="3" y="9.6" width="18" height="4.8" rx="2.4"/><path d="M8.5 9.6v4.8M15.5 9.6v4.8"/></g></symbol>
+  <symbol id="i-coach" viewBox="0 0 24 24"><path d="M3.5 10.2 13.5 6v12l-10-4.2v-3.6Z"/><path d="M6.5 15.4V19a1.5 1.5 0 0 0 3 0v-2.2"/><path d="M16.5 9.2a4.6 4.6 0 0 1 0 5.6"/><path d="M19 7a8 8 0 0 1 0 10"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19V9"/><path d="M3 13h13.5A4.5 4.5 0 0 1 21 17.5V19"/><path d="M3 17h18"/><circle cx="7.2" cy="10.8" r="1.8"/></symbol>
+  <symbol id="i-bus" viewBox="0 0 24 24"><rect x="3.5" y="4.5" width="17" height="13" rx="2.5"/><path d="M3.5 11.5h17"/><path d="M12 4.5v7"/><circle cx="7.6" cy="19.4" r="1.4"/><circle cx="16.4" cy="19.4" r="1.4"/></symbol>
+  <symbol id="i-lift" viewBox="0 0 24 24"><path d="M2 5l20-2.6"/><path d="M12.4 3.9V8"/><rect x="7.5" y="8" width="9.8" height="9.5" rx="2.4"/><path d="M7.5 12.6h9.8"/></symbol>
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M4 8.5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6v1.2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/><path d="M14.5 6.5v11" stroke-dasharray="2.4 2.6"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><path d="M5 13a7 7 0 0 1 14 0v2.4a1.6 1.6 0 0 1-1.6 1.6H6.6A1.6 1.6 0 0 1 5 15.4Z"/><path d="M5 13h14"/><path d="M9 17v1.3a3 3 0 0 0 6 0V17"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.8" y="5.5" width="16.4" height="15" rx="2.5"/><path d="M3.8 10.5h16.4"/><path d="M8.5 3.2v4M15.5 3.2v4"/><path d="M8 14.5h3M13 14.5h3M8 17.5h3"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5S5.5 15.8 5.5 11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 10.5-6.5 10.5Z"/><circle cx="12" cy="10.8" r="2.4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 7A2.8 2.8 0 0 1 6.8 4.2h10.4A2.8 2.8 0 0 1 20 7v6.4a2.8 2.8 0 0 1-2.8 2.8H10l-4.6 4v-4h-.4A2.8 2.8 0 0 1 4 13.4Z"/><path d="M8.4 10.7h.01M12 10.7h.01M15.6 10.7h.01" stroke-width="2.6"/></symbol>
+  <symbol id="i-snow" viewBox="0 0 24 24"><path d="M12 2.8v18.4"/><path d="M4 7.4l16 9.2M20 7.4 4 16.6"/><path d="M9.6 4.4 12 6.5l2.4-2.1M14.4 19.6 12 17.5l-2.4 2.1"/></symbol>
+  <symbol id="i-powder" viewBox="0 0 24 24"><path d="M3 9.4c3 0 3 2.2 6 2.2s3-2.2 6-2.2 3 2.2 6 2.2"/><path d="M3 15c3 0 3 2.2 6 2.2s3-2.2 6-2.2 3 2.2 6 2.2"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M8.2 12.4l2.6 2.7 5-5.4"/></symbol>
+  <symbol id="i-tick" viewBox="0 0 24 24"><path d="M4.5 12.8l5 5L19.5 6.6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15"/><path d="M13.5 5.8 19.7 12l-6.2 6.2"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9.4l6 6 6-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M12 7.4V12l3.4 2.2"/></symbol>
+  <symbol id="i-yen" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><path d="M8.8 7.6 12 12.4l3.2-4.8M12 12.4V17M9.4 13.6h5.2M9.4 15.8h5.2"/></symbol>
+  <symbol id="i-level" viewBox="0 0 24 24"><path d="M4.5 19.5v-3.4M9.5 19.5v-6.8M14.5 19.5V9.3M19.5 19.5V5.5"/></symbol>
+  <symbol id="i-group" viewBox="0 0 24 24"><circle cx="9" cy="8.4" r="3.1"/><path d="M3.4 19.6a5.6 5.6 0 0 1 11.2 0"/><circle cx="16.9" cy="9.6" r="2.4"/><path d="M16.4 19.6a5.4 5.4 0 0 1 4.2-5.2"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3.6 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8Z"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.8 19 5.6v5.5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V5.6Z"/><path d="m8.8 11.7 2.3 2.3 4.1-4.3"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6.5 4.6A1.6 1.6 0 0 1 8.1 3h5.7L18.5 7.7V19.4a1.6 1.6 0 0 1-1.6 1.6H8.1a1.6 1.6 0 0 1-1.6-1.6Z"/><path d="M13.8 3v4.9h4.7"/><path d="M9.6 12.4h5.2M9.6 15.8h5.2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M20.6 3.4 3.4 10.2l6.7 2.7 2.7 7.7 7.8-17.2Z"/><path d="M20.6 3.4 10.1 12.9"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.6" y="8.6" width="11" height="11.8" rx="2"/><path d="M15.4 8.6V6.2a2 2 0 0 0-2-2H6.2a2 2 0 0 0-2 2v7.2a2 2 0 0 0 2 2h2.4"/></symbol>
+  <symbol id="i-onsen" viewBox="0 0 24 24"><path d="M4.5 14h15v.8a7.5 7.5 0 0 1-15 0Z"/><path d="M8.6 4.5c-1 1.4.8 2.4-.2 3.8M12 4.5c-1 1.4.8 2.4-.2 3.8M15.4 4.5c-1 1.4.8 2.4-.2 3.8"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6.5 21.5v-17"/><path d="M6.5 5c2-1.3 4-1.3 6 0s4 1.3 6 0v7.4c-2 1.3-4 1.3-6 0s-4-1.3-6 0"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7.2h16M4 12h16M4 16.8h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4"/></symbol>
+</svg>
+
+<!-- ======= 導覽列 ======= -->
+<header class="site-nav scrolled">
+  <div class="nav-inner">
+    <a class="brand" href="index.html">
+      <svg class="mark ico" style="width:34px;height:34px;color:#6fc3f7"><use href="#i-mark"/></svg>
+      <span class="brand-txt"><b>KELLY SKI</b><span>JAPAN SNOW CONCIERGE</span></span>
+    </a>
+    <button class="nav-burger" aria-label="開啟選單">
+      <svg class="ico ic-menu"><use href="#i-menu"/></svg>
+      <svg class="ico ic-close"><use href="#i-close"/></svg>
+    </button>
+    <nav class="nav-links">
+      <a href="index.html">首頁</a>
+      <a href="services.html">服務項目</a>
+      <a href="resorts.html">雪場介紹</a>
+      <a href="guide.html">預約指南</a>
+      <a href="booking.html" class="nav-cta active"><svg class="ico"><use href="#i-send"/></svg>立即預約</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ======= 預約區 ======= -->
+<div class="booking-page">
+  <span class="ghost">BOOK NOW</span>
+  <div class="container">
+    <div class="booking-wrap">
+
+      <!-- 側欄說明 -->
+      <aside class="booking-side reveal">
+        <p class="eyebrow">Booking</p>
+        <h2>兩分鐘，<br>把整趟旅程交給 Kelly。</h2>
+        <p>填好需求單，系統會自動整理成一則訊息。按下送出直接開啟 LINE 傳給 Kelly，接下來就等專屬方案送上門。</p>
+        <ul class="side-steps">
+          <li><span class="sn en">01</span><span><b>填寫需求單</b><small>怎麼想就怎麼填，不確定的欄位留給 Kelly 建議。</small></span></li>
+          <li><span class="sn en">02</span><span><b>一鍵傳到 LINE</b><small>訊息自動生成，不用自己打字整理。</small></span></li>
+          <li><span class="sn en">03</span><span><b>收到專屬方案</b><small>規劃與報價免費，確認後才付訂。</small></span></li>
+        </ul>
+      </aside>
+
+      <!-- 表單 -->
+      <div>
+        <form class="booking reveal" id="bookingForm" novalidate style="--d:0.1s">
+          <p class="form-sec-label">關於你 About You</p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="fName">怎麼稱呼你 <span class="req">*</span></label>
+              <input type="text" id="fName" name="name" placeholder="例：陳小姐 / Gordon" required>
+            </div>
+            <div class="field">
+              <label for="fLine">你的 LINE 名稱或 ID <span class="req">*</span></label>
+              <input type="text" id="fLine" name="line" placeholder="方便 Kelly 認出你" required>
+            </div>
+            <div class="field">
+              <label for="fAdults">大人人數 <span class="req">*</span></label>
+              <input type="number" id="fAdults" name="adults" min="1" max="50" placeholder="例：2" required>
+            </div>
+            <div class="field">
+              <label for="fKids">小孩人數 <span class="opt">（12 歲以下）</span></label>
+              <input type="number" id="fKids" name="kids" min="0" max="50" placeholder="例：0">
+            </div>
+          </div>
+
+          <p class="form-sec-label">行程 Your Trip</p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="fDate">預計出發日期 <span class="req">*</span></label>
+              <input type="text" id="fDate" name="date" placeholder="例：2027/1 中旬，或確切日期" required>
+            </div>
+            <div class="field">
+              <label for="fDays">預計天數</label>
+              <select id="fDays" name="days">
+                <option value="">請選擇</option>
+                <option>3 天以內</option>
+                <option>4－5 天</option>
+                <option>6－7 天</option>
+                <option>8 天以上</option>
+                <option>還不確定</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fResort">想去的雪場</label>
+              <select id="fResort" name="resort">
+                <option value="">還不確定，請 Kelly 推薦</option>
+                <option>二世谷 Niseko</option>
+                <option>留壽都 Rusutsu</option>
+                <option>富良野 Furano</option>
+                <option>白馬 Hakuba</option>
+                <option>野澤溫泉 Nozawa</option>
+                <option>藏王溫泉 Zao</option>
+                <option>苗場 Naeba</option>
+                <option>輕井澤 Karuizawa</option>
+                <option>其他（備註說明）</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="fBudget">每人預算 <span class="opt">（不含機票）</span></label>
+              <select id="fBudget" name="budget">
+                <option value="">還沒有想法</option>
+                <option>3 萬台幣以內</option>
+                <option>3－5 萬台幣</option>
+                <option>5－8 萬台幣</option>
+                <option>8 萬台幣以上</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="form-sec-label">滑雪 Your Ride</p>
+          <div class="form-grid">
+            <div class="field full">
+              <label>滑雪程度 <span class="req">*</span></label>
+              <div class="choice-group">
+                <label><input type="radio" name="level" value="完全新手（沒滑過）" required>完全新手</label>
+                <label><input type="radio" name="level" value="初學（滑過 1－2 次）">初學（1－2 次）</label>
+                <label><input type="radio" name="level" value="中級（可自行滑行）">中級</label>
+                <label><input type="radio" name="level" value="進階">進階</label>
+              </div>
+            </div>
+            <div class="field full">
+              <label>想玩的板類</label>
+              <div class="choice-group">
+                <label><input type="radio" name="board" value="單板 Snowboard">單板 Snowboard</label>
+                <label><input type="radio" name="board" value="雙板 Ski">雙板 Ski</label>
+                <label><input type="radio" name="board" value="都想試 / 還不確定">都想試／還不確定</label>
+              </div>
+            </div>
+            <div class="field full">
+              <label>需要哪些服務？<span class="opt">（可複選）</span></label>
+              <div class="choice-group">
+                <label><input type="checkbox" name="services" value="滑雪課程／教練">課程／教練</label>
+                <label><input type="checkbox" name="services" value="住宿">住宿</label>
+                <label><input type="checkbox" name="services" value="交通接駁">交通接駁</label>
+                <label><input type="checkbox" name="services" value="雪具租借">雪具租借</label>
+                <label><input type="checkbox" name="services" value="雪票">雪票</label>
+              </div>
+            </div>
+            <div class="field full">
+              <label for="fNote">其他備註 <span class="opt">（飲食、特殊需求、想問的都可以寫）</span></label>
+              <textarea id="fNote" name="note" placeholder="例：有一位長輩同行不滑雪、希望教練會教小朋友…"></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">產生需求訊息<svg class="ico slide"><use href="#i-arrow"/></svg></button>
+            <p class="form-note"><svg class="ico"><use href="#i-shield"/></svg>資料只用來規劃行程，不會外流、不會推銷。</p>
+          </div>
+        </form>
+
+        <!-- 結果 -->
+        <div class="result" id="result">
+          <h3><svg class="ico"><use href="#i-check"/></svg>需求單完成！</h3>
+          <p class="hint">訊息已幫你整理好——按下方按鈕傳給 Kelly，或複製後貼到 LINE。</p>
+          <textarea id="resultText" readonly></textarea>
+          <div class="result-actions">
+            <button class="btn btn-line-g" id="btnLine"><svg class="ico"><use href="#i-send"/></svg>用 LINE 傳給 Kelly</button>
+            <button class="btn btn-dark" id="btnCopy"><svg class="ico"><use href="#i-copy"/></svg>複製訊息</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= Footer ======= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html">
+          <svg class="ico" style="width:32px;height:32px;color:#6fc3f7"><use href="#i-mark"/></svg>
+          <span class="brand-txt"><b>KELLY SKI</b><span>JAPAN SNOW CONCIERGE</span></span>
+        </a>
+        <p>日本滑雪一站式代辦。課程、教練、住宿、交通，一則訊息全部搞定。</p>
+      </div>
+      <div>
+        <h4>Pages</h4>
+        <nav>
+          <a href="index.html">首頁</a>
+          <a href="services.html">服務項目</a>
+          <a href="resorts.html">雪場介紹</a>
+          <a href="guide.html">預約指南</a>
+        </nav>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <nav>
+          <a href="services.html#lessons">課程與教練</a>
+          <a href="services.html#stay">住宿安排</a>
+          <a href="services.html#transfer">交通接駁</a>
+          <a href="services.html#gear">雪票與裝備</a>
+        </nav>
+      </div>
+      <div class="foot-contact">
+        <h4>Contact</h4>
+        <p>填寫上方需求單，Kelly 透過 LINE 與你聯繫。</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span data-year>2026</span> Kelly Ski Japan. All rights reserved.</span>
+      <span class="en">MADE FOR POWDER LOVERS</span>
+    </div>
+  </div>
+  <span class="foot-watermark">KELLY SKI JAPAN</span>
+</footer>
+
+<div class="toast" id="toast">已複製！貼到 LINE 傳給 Kelly 吧</div>
+
+<script src="main.js"></script>
+</body>
+</html>
