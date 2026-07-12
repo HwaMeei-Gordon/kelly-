@@ -5,7 +5,7 @@
 /* ====== 設定（Kelly 上線前請修改這裡）======
    LINE 官方帳號請含 @，例如 "@123abcd"
    個人帳號請填加好友連結末段 ID，例如 "kelly123"（即 line.me/ti/p/~kelly123）*/
-const KELLY_LINE_ID = "";
+const KELLY_LINE_ID = "@965vhiqj";
 
 /* Kelly 的 Instagram（選填），例如 "https://www.instagram.com/kelly.ski" */
 const KELLY_IG_URL = "";
