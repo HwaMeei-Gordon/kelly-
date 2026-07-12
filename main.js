@@ -7,6 +7,12 @@
    個人帳號請填加好友連結末段 ID，例如 "kelly123"（即 line.me/ti/p/~kelly123）*/
 const KELLY_LINE_ID = "@965vhiqj";
 
+/* 需求單自動通知（部署教學見 backend/SETUP.md）
+   兩個值都填好後，客人送出需求單會直接推播到 Kelly 的 LINE，
+   不需要客人手動傳送；未填則維持「複製訊息＋開 LINE」流程。 */
+const KELLY_WEBHOOK_URL = "";
+const KELLY_WEBHOOK_KEY = "";
+
 /* Kelly 的 Instagram（選填），例如 "https://www.instagram.com/kelly.ski" */
 const KELLY_IG_URL = "";
 
@@ -76,34 +82,89 @@ document.querySelectorAll("[data-year]").forEach((el) => {
 const form = document.getElementById("bookingForm");
 if (form) {
   const result = document.getElementById("result");
+  const autoResult = document.getElementById("autoResult");
   const resultText = document.getElementById("resultText");
   const toast = document.getElementById("toast");
 
-  form.addEventListener("submit", (e) => {
+  // 加好友按鈕連結
+  const addBtn = document.getElementById("btnAddFriend");
+  if (addBtn && KELLY_LINE_ID) {
+    addBtn.href = KELLY_LINE_ID.startsWith("@")
+      ? "https://line.me/R/ti/p/" + encodeURIComponent(KELLY_LINE_ID)
+      : "https://line.me/ti/p/~" + encodeURIComponent(KELLY_LINE_ID);
+  }
+
+  function showPanel(panel) {
+    [result, autoResult].forEach((p) => p && p.classList.remove("show"));
+    panel.classList.add("show");
+    panel.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
 
     const d = new FormData(form);
     const services = d.getAll("services");
+    const fields = {
+      name: d.get("name").trim(),
+      line: d.get("line").trim(),
+      adults: d.get("adults"),
+      kids: d.get("kids") || "",
+      date: d.get("date").trim(),
+      days: d.get("days") || "",
+      level: d.get("level") || "",
+      board: d.get("board") || "",
+      services: services.join("、"),
+      resort: d.get("resort") || "",
+      budget: d.get("budget") || "",
+      note: d.get("note").trim(),
+    };
     const lines = [
       "＝＝ 日本滑雪需求單 ＝＝",
-      "稱呼：" + d.get("name").trim(),
-      "LINE：" + d.get("line").trim(),
-      "人數：大人 " + d.get("adults") + " 位" +
-        (d.get("kids") ? "、小孩 " + d.get("kids") + " 位" : ""),
-      "日期：" + d.get("date").trim() + (d.get("days") ? "（" + d.get("days") + "）" : ""),
-      "程度：" + (d.get("level") || "未填"),
+      "稱呼：" + fields.name,
+      "LINE：" + fields.line,
+      "人數：大人 " + fields.adults + " 位" +
+        (fields.kids ? "、小孩 " + fields.kids + " 位" : ""),
+      "日期：" + fields.date + (fields.days ? "（" + fields.days + "）" : ""),
+      "程度：" + (fields.level || "未填"),
     ];
-    if (d.get("board")) lines.push("板類：" + d.get("board"));
-    lines.push("需要服務：" + (services.length ? services.join("、") : "請 Kelly 建議"));
-    lines.push("想去雪場：" + (d.get("resort") || "還不確定，請 Kelly 推薦"));
-    if (d.get("budget")) lines.push("每人預算：" + d.get("budget"));
-    if (d.get("note").trim()) lines.push("備註：" + d.get("note").trim());
+    if (fields.board) lines.push("板類：" + fields.board);
+    lines.push("需要服務：" + (fields.services || "請 Kelly 建議"));
+    lines.push("想去雪場：" + (fields.resort || "還不確定，請 Kelly 推薦"));
+    if (fields.budget) lines.push("每人預算：" + fields.budget);
+    if (fields.note) lines.push("備註：" + fields.note);
     lines.push("＝＝＝＝＝＝＝＝＝＝＝＝");
 
-    resultText.value = lines.join("\n");
-    result.classList.add("show");
-    result.scrollIntoView({ behavior: "smooth", block: "center" });
+    const message = lines.join("\n");
+    resultText.value = message;
+
+    // 有設定雲端通知 → 直接把需求單推播給 Kelly，客人不用開 LINE
+    if (KELLY_WEBHOOK_URL) {
+      const btn = form.querySelector('button[type="submit"]');
+      const orig = btn.innerHTML;
+      btn.disabled = true;
+      btn.textContent = "送出中…";
+      try {
+        const resp = await fetch(KELLY_WEBHOOK_URL, {
+          method: "POST",
+          body: JSON.stringify({ key: KELLY_WEBHOOK_KEY, message: message, fields: fields }),
+        });
+        const out = await resp.json();
+        if (out && out.ok) {
+          btn.disabled = false;
+          btn.innerHTML = orig;
+          showPanel(autoResult);
+          return;
+        }
+      } catch (err) {
+        /* 雲端暫時故障 → 退回手動流程，不漏單 */
+      }
+      btn.disabled = false;
+      btn.innerHTML = orig;
+    }
+
+    showPanel(result);
   });
 
   async function copyMessage() {
