@@ -191,7 +191,10 @@ pipeline(SESSIONS,
 存在課本資料夾的**上一層**（單元資料夾），照前面的結構圖。
 
 - `create_file` 的 `textContent` 必須把內容整段重打一次，很吃 context。**先把三份來源檔用 SendUserFile 交付給使用者**，再慢慢上傳 Drive，這樣中途出事也不會沒東西可用
-- Drive **沒有更新內容的工具**。要換版本就 `trash_file` 舊的再 `create_file` 新的
+- Drive **沒有更新內容的工具**。要換版本只能重建，順序一定是：
+  **先 `create_file` 新的 → 確認大小正確 → 才 `trash_file` 舊的**。
+  反過來先刪再建，一旦建立失敗（例如撞到 `Resource has been exhausted` 配額錯誤）資料夾就會缺檔。同名新舊並存幾秒鐘沒關係，缺檔才是問題
+- 寫入可能因配額被擋。**大量連續寫入要放慢**，失敗就重試，不要放著不管
 - `create_file` 回傳的 `fileSize` 常是 `1`，那是還沒轉檔完。用 `get_file_metadata` 或 `search_files`（`excludeContentSnippets: true`）**回頭確認真實大小**，確定內容有寫進去
 - 建檔前確認父資料夾 `canAddChildren: true`
 
